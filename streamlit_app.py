@@ -1,9 +1,11 @@
 import io
 import os
-
+import docx
 import openai
 import streamlit as st
-
+from streamlit_chat import message as msg
+from dotenv import load_dotenv
+load_dotenv()
 api_key = os.getenv('test')
 openai.api_key = api_key
 
@@ -36,8 +38,13 @@ if 'exam' in userInput:
 if len(st.session_state.history) > 0:
     for i in range(len(st.session_state.history)):
         if i % 2 == 0:
-            st.write("Question:" + st.session_state.history[i]['content'], is_user=True)
+            msg("Question:" + st.session_state.history[i]['content'], is_user=True)
         else:
-            st.write("Answer:" + st.session_state.history[i]['content'])
+            msg("Answer:" + st.session_state.history[i]['content'])
 
-
+if len(st.session_state.history) > 0:
+    btn_save = st.button("Save Text")
+    if btn_save:
+        data = io.BytesIO()
+        document = docx.Document()
+        document.add_heading('abc', level=1)
