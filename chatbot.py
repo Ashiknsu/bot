@@ -1,9 +1,9 @@
+import io
+import os
+import docx
 import openai
 import streamlit as st
-import os
-#from streamlit_chat import message as msg
-import docx
-import io
+from streamlit_chat import message as msg
 
 openai.api_key = os.getenv("chatbot")
 
@@ -36,19 +36,13 @@ if 'exam' in userInput:
 if len(st.session_state.history) > 0:
     for i in range(len(st.session_state.history)):
         if i % 2 == 0:
-            st.write("Question:" + st.session_state.history[i]['content'], is_user=True)
+            msg("Question:" + st.session_state.history[i]['content'], is_user=True)
         else:
-            st.write("Answer:" + st.session_state.history[i]['content'])
+            msg("Answer:" + st.session_state.history[i]['content'])
 
 if len(st.session_state.history) > 0:
     btn_save = st.button("Save Text")
     if btn_save:
         data = io.BytesIO()
         document = docx.Document()
-        socument.add_heading('abc', level =1)
-
-
-st.sidebar.title("Chatbot")
-
-name_sidebar = st.sidebar.text_input("Type your name here")
-st.sidebar.write("Welcome " + name_sidebar)
+        document.add_heading('abc', level=1)
