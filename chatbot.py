@@ -5,7 +5,7 @@ import os
 import docx
 import io
 
-openai.api_key = os.getenv("Ashik_openai")
+openai.api_key = os.getenv("chatbot")
 #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
 st.title("University of Liberal Arts Bangladesh")
 st.subheader("Department of Computer Science and Engineering")
