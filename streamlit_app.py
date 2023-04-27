@@ -5,7 +5,7 @@ import openai
 import streamlit as st
 
 
-openai.api_key = os.getenv("chatbot")
+openai.api_key = "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"
 
 st.title("University of Liberal Arts Bangladesh")
 st.subheader("Department of Computer Science and Engineering")
