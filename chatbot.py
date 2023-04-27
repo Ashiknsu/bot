@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
 import os
-from streamlit_chat import message as msg
+#from streamlit_chat import message as msg
 import docx
 import io
 
@@ -36,9 +36,9 @@ if 'exam' in userInput:
 if len(st.session_state.history) > 0:
     for i in range(len(st.session_state.history)):
         if i % 2 == 0:
-            msg("Question:" + st.session_state.history[i]['content'], is_user=True)
+            st.write("Question:" + st.session_state.history[i]['content'], is_user=True)
         else:
-            msg("Answer:" + st.session_state.history[i]['content'])
+            st.write("Answer:" + st.session_state.history[i]['content'])
 
 if len(st.session_state.history) > 0:
     btn_save = st.button("Save Text")
