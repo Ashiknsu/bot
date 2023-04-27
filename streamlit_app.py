@@ -3,7 +3,7 @@ import os
 
 import openai
 import streamlit as st
-from streamlit_chat import message as msg
+
 
 openai.api_key = os.getenv("chatbot")
 
@@ -36,13 +36,8 @@ if 'exam' in userInput:
 if len(st.session_state.history) > 0:
     for i in range(len(st.session_state.history)):
         if i % 2 == 0:
-            msg("Question:" + st.session_state.history[i]['content'], is_user=True)
+            st.write("Question:" + st.session_state.history[i]['content'], is_user=True)
         else:
-            msg("Answer:" + st.session_state.history[i]['content'])
+            st.write("Answer:" + st.session_state.history[i]['content'])
 
-if len(st.session_state.history) > 0:
-    btn_save = st.button("Save Text")
-    if btn_save:
-        data = io.BytesIO()
-        document = docx.Document()
-        document.add_heading('abc', level=1)
+
