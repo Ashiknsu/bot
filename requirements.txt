@@ -1,9 +1,5 @@
-numpy
-pandas
-matplotlib
-seaborn
-plotly
 streamlit
 openai
 streamlit_chat
+message
 os
