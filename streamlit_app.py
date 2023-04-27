@@ -1,6 +1,6 @@
 import io
 import os
-import docx
+
 import openai
 import streamlit as st
 from streamlit_chat import message as msg
