@@ -4,8 +4,8 @@ import os
 import openai
 import streamlit as st
 
-
-openai.api_key = os.getenv("test")
+api_key = os.getenv('test')
+openai.api_key = api_key
 
 st.title("University of Liberal Arts Bangladesh")
 st.subheader("Department of Computer Science and Engineering")
