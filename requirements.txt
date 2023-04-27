@@ -6,3 +6,4 @@ plotly
 streamlit
 openai
 streamlit_chat
+os
