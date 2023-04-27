@@ -5,7 +5,7 @@ import openai
 import streamlit as st
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 st.title("University of Liberal Arts Bangladesh")
 st.subheader("Department of Computer Science and Engineering")
